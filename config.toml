@@ -6,7 +6,7 @@ baseURL = "https://mohamedallam1991.github.io/linktree"
 # https://github.com/MariaLetta/free-gophers-pack
 enableEmoji = true
 disableKinds = ["taxonomy", "term"]
-# copyright = "Copy, _right?_ :rocket:"
+# copyright = "Copy, _right?_ :rocket:" a
 
 [author]
   name = "Mohamed Allam"
