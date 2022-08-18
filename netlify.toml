@@ -1,6 +1,6 @@
 [build]
 #   command = "cd exampleSite && hugo --gc --minify -D -b $URL"
-  command = "git submodule update --remote --merge && npm run build && hugo --gc --minify -D "
+  command = "git submodule update --remote --merge && hugo --gc --minify -D "
   publish = "public"
 
 [context.production.environment]
@@ -9,7 +9,7 @@ HUGO_ENV = "production"
 HUGO_ENABLEGITINFO = "true"
 
 [context.deploy-preview]
-command = "npm run build && hugo --gc --minify -D "
+command = "hugo --gc --minify -D "
 
 [context.deploy-preview.environment]
 HUGO_VERSION = "0.100.2"
