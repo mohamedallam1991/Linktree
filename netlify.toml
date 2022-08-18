@@ -1,24 +1,21 @@
 [build]
-  command = "cd exampleSite && hugo --gc --minify -D -b $URL"
-  publish = "exampleSite/public"
-
-[build.environment]
-HUGO_THEMESDIR = "../.."
-HUGO_THEME = "repo"
-TZ = "Australia/Melbourne"
+#   command = "cd exampleSite && hugo --gc --minify -D -b $URL"
+  command = "git submodule update --remote --merge && npm run build && hugo --gc --minify -D "
+  publish = "public"
 
 [context.production.environment]
 HUGO_VERSION = "0.100.2"
 HUGO_ENV = "production"
+HUGO_ENABLEGITINFO = "true"
 
 [context.deploy-preview]
-command = "cd exampleSite && hugo --gc --minify -D -b $DEPLOY_PRIME_URL"
+command = "npm run build && hugo --gc --minify -D "
 
 [context.deploy-preview.environment]
 HUGO_VERSION = "0.100.2"
 
 [context.branch-deploy]
-command = "cd exampleSite && hugo --gc --minify -D -b $DEPLOY_PRIME_URL"
+command = "npm run build && hugo --gc --minify -D "
 
 [context.branch-deploy.environment]
 HUGO_VERSION = "0.100.2"
